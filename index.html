@@ -318,7 +318,22 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
 .divider{height:1px;background:var(–border);margin:1.3rem 0}
 .no-results{text-align:center;padding:3.5rem 2rem;color:var(–text3)}.no-results-icon{font-size:2.5rem;margin-bottom:.85rem}
 
-@media(max-width:768px){.shop-layout{flex-direction:column}.filters-panel{width:100%;position:static}.modal-body{flex-direction:column}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:1.5rem}.payment-options{grid-template-columns:1fr}.portal-sidebar,.admin-sidebar{display:none}.stats-grid{grid-template-columns:1fr 1fr}.inbox-layout{flex-direction:column}.inbox-list{width:100%}}
+@media(max-width:768px){
+.shop-layout{flex-direction:column}.filters-panel{width:100%;position:static}
+.modal-body{flex-direction:column}.form-row{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:1.5rem}.payment-options{grid-template-columns:1fr}
+.stats-grid{grid-template-columns:1fr 1fr}
+.inbox-layout{flex-direction:column}.inbox-list{width:100%}
+.portal-sidebar,.admin-sidebar{display:none}
+.portal-wrap,.admin-wrap{flex-direction:column}
+.portal-content,.admin-content{padding:1rem}
+.mobile-tabs{display:flex!important}
+.portal-title,.admin-panel-title{font-size:.95rem}
+}
+.mobile-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:rgba(254,246,240,.97);border-top:1.5px solid var(–border);padding:.5rem 0;justify-content:space-around;backdrop-filter:blur(10px)}
+.mobile-tab{display:flex;flex-direction:column;align-items:center;gap:.2rem;background:none;border:none;cursor:pointer;padding:.3rem .5rem;color:var(–text3);font-family:‘DM Sans’,sans-serif;font-size:.6rem;min-width:50px;transition:color .2s;position:relative}
+.mobile-tab.active{color:var(–deep)}.mobile-tab-icon{font-size:1.2rem}.mobile-tab-badge{position:absolute;top:0;right:8px;background:var(–deep);color:white;font-size:.55rem;padding:.1rem .3rem;border-radius:10px;font-weight:700}
+.has-mobile-tabs{padding-bottom:65px!important}
 </style></head><body>
 
 <!-- NAV -->
@@ -498,6 +513,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
         <div class="portal-bottom"><button class="portal-logout" onclick="sellerLogout()">← Logout</button></div>
       </div>
       <div class="portal-content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)"><span style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--deep)" id="sellerPortalTitle">Seller Portal</span><button class="btn-back" style="margin:0" onclick="goHome()">← Shop</button></div>
         <div class="portal-panel active" id="spanel-dashboard">
           <div class="portal-title">Dashboard</div><div class="portal-sub">Your store at a glance</div>
           <div class="stats-grid" id="sellerStats"></div>
@@ -565,7 +581,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
   <div id="adminDash" style="display:none">
     <div class="admin-wrap">
       <div class="admin-sidebar">
-        <div class="admin-sidebar-logo"><div class="al">UAE Finds Admin</div><div class="al2">Platform Management</div></div>
+        <div class="admin-sidebar-logo"><div class="al">UAE Finds Admin</div><div class="al2">Platform Management</div><button class="portal-logout" style="margin-top:.75rem" onclick="goHome()">← Back to Shop</button></div>
         <div class="admin-nav-item active" onclick="switchAdminTab('dashboard')" id="atab-dashboard"><span class="admin-nav-icon">📊</span> Dashboard</div>
         <div class="admin-nav-item" onclick="switchAdminTab('orders')" id="atab-orders"><span class="admin-nav-icon">📦</span> All Orders <span class="admin-nav-badge" id="adminPendingBadge" style="display:none">0</span></div>
         <div class="admin-nav-item" onclick="switchAdminTab('sellers')" id="atab-sellers"><span class="admin-nav-icon">🏪</span> Sellers <span class="admin-nav-badge" id="adminSellerBadge" style="display:none">0</span></div>
@@ -573,6 +589,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
         <div class="admin-sidebar-bottom"><button class="admin-logout-btn" onclick="adminLogout()">← Logout</button></div>
       </div>
       <div class="admin-content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)"><span style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--deep)">UAE Finds Admin</span><button class="btn-back" style="margin:0" onclick="goHome()">← Shop</button></div>
         <div class="admin-panel active" id="apanel-dashboard">
           <div class="admin-panel-title">Platform Dashboard</div><div class="admin-panel-sub">Overview across all sellers</div>
           <div class="stats-grid" id="adminStats"></div>
@@ -601,6 +618,26 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
       </div>
     </div>
   </div>
+</div>
+
+<!-- ADMIN MOBILE TABS -->
+
+<div class="mobile-tabs" id="adminMobileTabs">
+  <button class="mobile-tab active" id="amtab-dashboard" onclick="switchAdminTab('dashboard');setAMTab('dashboard')"><span class="mobile-tab-icon">📊</span>Dashboard</button>
+  <button class="mobile-tab" id="amtab-orders" onclick="switchAdminTab('orders');setAMTab('orders')"><span class="mobile-tab-icon">📦</span>Orders<span class="mobile-tab-badge" id="adminPendingBadge2" style="display:none">0</span></button>
+  <button class="mobile-tab" id="amtab-sellers" onclick="switchAdminTab('sellers');setAMTab('sellers')"><span class="mobile-tab-icon">🏪</span>Sellers<span class="mobile-tab-badge" id="adminSellerBadge2" style="display:none">0</span></button>
+  <button class="mobile-tab" id="amtab-inbox" onclick="switchAdminTab('inbox');setAMTab('inbox')"><span class="mobile-tab-icon">✉️</span>Inbox<span class="mobile-tab-badge" id="adminInboxBadge2" style="display:none">0</span></button>
+  <button class="mobile-tab" onclick="adminLogout();document.getElementById('adminMobileTabs').style.display='none'"><span class="mobile-tab-icon">🚪</span>Exit</button>
+</div>
+
+<!-- SELLER MOBILE TABS -->
+
+<div class="mobile-tabs" id="sellerMobileTabs">
+  <button class="mobile-tab active" id="smtab-dashboard" onclick="switchSellerTab('dashboard');setSMTab('dashboard')"><span class="mobile-tab-icon">📊</span>Dashboard</button>
+  <button class="mobile-tab" id="smtab-orders" onclick="switchSellerTab('orders');setSMTab('orders')"><span class="mobile-tab-icon">📦</span>Orders<span class="mobile-tab-badge" id="sellerPendingBadge2" style="display:none">0</span></button>
+  <button class="mobile-tab" id="smtab-inventory" onclick="switchSellerTab('inventory');setSMTab('inventory')"><span class="mobile-tab-icon">🏷️</span>Listings</button>
+  <button class="mobile-tab" id="smtab-inbox" onclick="switchSellerTab('inbox');setSMTab('inbox')"><span class="mobile-tab-icon">✉️</span>Inbox<span class="mobile-tab-badge" id="sellerInboxBadge2" style="display:none">0</span></button>
+  <button class="mobile-tab" id="smtab-settings" onclick="switchSellerTab('settings');setSMTab('settings')"><span class="mobile-tab-icon">⚙️</span>More</button>
 </div>
 
 <!-- PRODUCT MODAL -->
@@ -798,6 +835,7 @@ window.showPage = function(p) {
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
   window.scrollTo(0,0);
+  updateMobileTabs(p);
   if(p==='home')renderHome();
   if(p==='shop')renderShop();
   if(p==='checkout')renderCheckout();
@@ -1358,9 +1396,9 @@ function renderAdminDash(){
   const pend=orders.filter(o=>o.status==='pending').length;
   const pendApp=sellers.filter(s=>s.status==='pending_approval').length;
   document.getElementById('adminStats').innerHTML=`<div class="stat-card"><div class="stat-label">Platform Revenue</div><div class="stat-value">AED ${rev.toLocaleString()}</div><div class="stat-sub">delivered orders</div></div><div class="stat-card"><div class="stat-label">Total Orders</div><div class="stat-value">${orders.length}</div></div><div class="stat-card"><div class="stat-label">Pending Orders</div><div class="stat-value" style="color:var(--red)">${pend}</div></div><div class="stat-card"><div class="stat-label">Active Sellers</div><div class="stat-value">${sellers.filter(s=>s.status==='active').length}</div></div><div class="stat-card"><div class="stat-label">Pending Approval</div><div class="stat-value" style="color:var(--orange)">${pendApp}</div></div><div class="stat-card"><div class="stat-label">Total Listings</div><div class="stat-value">${products.length}</div></div>`;
-  const pb=document.getElementById('adminPendingBadge');pb.textContent=pend;pb.style.display=pend>0?'inline-flex':'none';
-  const sb=document.getElementById('adminSellerBadge');sb.textContent=pendApp;sb.style.display=pendApp>0?'inline-flex':'none';
-  const ui=adminMsgs.filter(m=>!m.read).length;const ib=document.getElementById('adminInboxBadge');ib.textContent=ui;ib.style.display=ui>0?'inline-flex':'none';
+  const pb=document.getElementById('adminPendingBadge');pb.textContent=pend;pb.style.display=pend>0?'inline-flex':'none';const pb2=document.getElementById('adminPendingBadge2');if(pb2){pb2.textContent=pend;pb2.style.display=pend>0?'inline-flex':'none';}
+  const sb=document.getElementById('adminSellerBadge');sb.textContent=pendApp;sb.style.display=pendApp>0?'inline-flex':'none';const sb2=document.getElementById('adminSellerBadge2');if(sb2){sb2.textContent=pendApp;sb2.style.display=pendApp>0?'inline-flex':'none';}
+  const ui=adminMsgs.filter(m=>!m.read).length;const ib=document.getElementById('adminInboxBadge');ib.textContent=ui;ib.style.display=ui>0?'inline-flex':'none';const ib2=document.getElementById('adminInboxBadge2');if(ib2){ib2.textContent=ui;ib2.style.display=ui>0?'inline-flex':'none';}
   document.getElementById('adminSellerPerf').innerHTML=sellers.map(s=>{const sO=orders.filter(o=>o.sellerId===s.id);const sR=sO.filter(o=>o.status==='delivered').reduce((t,o)=>t+o.total,0);return`<tr><td><div class="td-name">${s.storeName}</div><div class="td-sub">${s.ownerName}</div></td><td><span class="status-pill ${s.status}">${s.status}</span></td><td>${products.filter(p=>p.sellerId===s.id).length}</td><td>${sO.length}</td><td><span style="font-family:'Outfit',sans-serif;color:var(--deep)">AED ${sR}</span></td><td style="color:var(--text3)">${fmtDate(s.createdAt)}</td></tr>`;}).join('');
   document.getElementById('adminRecentOrders').innerHTML=orders.slice(0,6).map(o=>`<tr style="cursor:pointer" onclick="openOD('${o.id}')"><td><span style="font-weight:800;color:var(--deep)">${o.id}</span></td><td><div class="td-name">${o.customerName}</div></td><td style="color:var(--text2)">${sellerName(o.sellerId)}</td><td><span style="font-family:'Outfit',sans-serif;color:var(--deep)">AED ${o.total}</span></td><td><span class="status-pill ${o.status}">${o.status}</span></td><td style="color:var(--text3)">${fmtDate(o.createdAt)}</td></tr>`).join('');
 }
@@ -1436,7 +1474,31 @@ window.showToast=(msg)=>{const t=document.getElementById('toast');t.textContent=
 // ═══════════════════════════════════════════
 init();
 
+// Mobile tab helpers
+window.setAMTab = (t) => {
+  document.querySelectorAll('#adminMobileTabs .mobile-tab').forEach(x=>x.classList.remove('active'));
+  const el=document.getElementById('amtab-'+t);if(el)el.classList.add('active');
+};
+window.setSMTab = (t) => {
+  document.querySelectorAll('#sellerMobileTabs .mobile-tab').forEach(x=>x.classList.remove('active'));
+  const el=document.getElementById('smtab-'+t);if(el)el.classList.add('active');
+};
+
+// Show/hide mobile tabs based on current page
+function updateMobileTabs(page) {
+  const at=document.getElementById('adminMobileTabs');
+  const st=document.getElementById('sellerMobileTabs');
+  const ac=document.getElementById('adminDash');
+  const sc=document.getElementById('sellerDash');
+  if(at)at.style.display=(page==='admin'&&adminIn)?'flex':'none';
+  if(st)st.style.display=(page==='seller'&&currentUser)?'flex':'none';
+  // Add bottom padding when tabs visible
+  const ap=document.getElementById('apanel-'+curAdminTab);
+  const sp=document.getElementById('spanel-'+curSellerTab);
+}
+
 // Hash routing
+
 function handleHash(){
   const h=window.location.hash;
   if(h==='#admin'){showPage('admin');}
