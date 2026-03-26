@@ -20,9 +20,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .nav-logo{font-family:‘Outfit’,sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:var(–deep);cursor:pointer;white-space:nowrap;line-height:1}
 .nav-right{display:flex;align-items:center;gap:.4rem}
 .nav-btn{background:none;border:none;color:var(–text2);cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.82rem;padding:.35rem .7rem;border-radius:20px;transition:all .2s;white-space:nowrap}.nav-btn:hover{background:var(–blush);color:var(–deep)}
-.cart-btn{background:#6B2150;color:#fff;border:none;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.78rem;padding:.45rem .9rem;border-radius:20px;display:flex;align-items:center;gap:.4rem;transition:background .2s;white-space:nowrap}.cart-btn:hover{background:var(–deep)}
+.cart-btn{background:#6B2150;color:#fff;border:none;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.76rem;padding:.45rem .75rem;border-radius:20px;display:flex;align-items:center;gap:.3rem;transition:background .2s;white-space:nowrap;flex-shrink:0}.cart-btn:hover{background:var(–deep)}
 .cart-count{background:#fff;color:#6B2150;width:17px;height:17px;border-radius:50%;font-size:.68rem;display:flex;align-items:center;justify-content:center;font-weight:800}
-.nav-user-btn{display:flex;align-items:center;gap:.4rem;background:var(–blush);border:1px solid var(–rose);color:var(–deep);padding:.35rem .85rem;border-radius:20px;cursor:pointer;font-size:.8rem;font-family:‘DM Sans’,sans-serif;transition:all .2s}.nav-user-btn:hover{background:var(–rose)}
+.nav-user-btn{display:flex;align-items:center;gap:.4rem;background:var(–deep);border:1px solid var(–deep);color:#fff;padding:.35rem .85rem;border-radius:20px;cursor:pointer;font-size:.78rem;font-family:‘DM Sans’,sans-serif;font-weight:700;transition:all .2s}.nav-user-btn:hover{background:var(–mauve)}
 .nav-inbox-btn{position:relative;background:none;border:none;color:var(–text2);cursor:pointer;font-size:1rem;padding:.3rem .5rem;transition:color .2s}.nav-inbox-btn:hover{color:var(–deep)}
 .nav-inbox-dot{position:absolute;top:2px;right:2px;width:7px;height:7px;background:var(–red);border-radius:50%;border:2px solid var(–bg)}
 
@@ -60,16 +60,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .filter-option input[type=checkbox]{accent-color:var(–deep);width:13px;height:13px;flex-shrink:0}
 .filter-option label{font-size:.78rem;color:var(–text2);cursor:pointer;transition:color .2s}.filter-option:hover label{color:var(–deep)}
 .price-inputs{display:flex;gap:.45rem}
-.price-input,.form-input,.form-select,.form-textarea{background:var(–bg3);border:1.5px solid var(–border);color:var(–text);padding:.55rem .7rem;border-radius:10px;font-size:.8rem;font-family:‘DM Sans’,sans-serif;outline:none;transition:border-color .2s;width:100%}
+.price-input,.form-input,.form-select,.form-textarea{background:var(–bg2);border:1.5px solid var(–border);color:var(–text);padding:.55rem .7rem;border-radius:10px;font-size:.8rem;font-family:‘DM Sans’,sans-serif;outline:none;transition:border-color .2s;width:100%}
 .price-input:focus,.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(–mauve)}
 .form-textarea{resize:vertical;min-height:80px}.form-select option{background:var(–bg2)}
-.filter-reset{background:none;border:1.5px solid var(–border);color:var(–text2);padding:.42rem .85rem;border-radius:20px;cursor:pointer;font-size:.76rem;width:100%;transition:all .2s;font-family:‘DM Sans’,sans-serif;margin-top:.4rem}.filter-reset:hover{border-color:var(–mauve);color:var(–deep)}
+.filter-reset{background:var(–bg2);border:1.5px solid var(–mauve);color:var(–deep);padding:.42rem .85rem;border-radius:20px;cursor:pointer;font-size:.76rem;width:100%;transition:all .2s;font-family:‘DM Sans’,sans-serif;margin-top:.4rem;font-weight:600}.filter-reset:hover{background:var(–blush)}
 .products-area{flex:1}
 .shop-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.3rem;flex-wrap:wrap;gap:.7rem}
-.search-bar{display:flex;align-items:center;gap:.45rem;background:var(–bg2);border:1.5px solid var(–border);border-radius:20px;padding:.5rem .9rem;flex:1;max-width:360px}
+.search-bar{display:flex;align-items:center;gap:.45rem;background:var(–bg2);border:1.5px solid var(–mauve);border-radius:20px;padding:.5rem .9rem;flex:1;max-width:360px}
 .search-bar input{background:none;border:none;color:var(–text);font-family:‘DM Sans’,sans-serif;font-size:.82rem;width:100%;outline:none}
 .search-bar input::placeholder{color:var(–text3)}
-.sort-select{background:var(–bg2);border:1.5px solid var(–border);color:var(–text);padding:.5rem .85rem;border-radius:20px;font-family:‘DM Sans’,sans-serif;font-size:.8rem;cursor:pointer;outline:none}
+.sort-select{background:var(–bg2);border:1.5px solid var(–mauve);color:var(–text);padding:.5rem .85rem;border-radius:20px;font-family:‘DM Sans’,sans-serif;font-size:.8rem;cursor:pointer;outline:none}
 .results-count{font-size:.78rem;color:var(–text3)}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
 .product-card{background:var(–bg2);border:1.5px solid var(–border);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative}
@@ -85,13 +85,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .product-price{font-family:‘Outfit’,sans-serif;font-size:1.3rem;color:var(–deep);font-weight:600}
 .product-price small{font-size:.7rem;color:var(–text3);font-family:‘DM Sans’,sans-serif;font-weight:400}
 .product-card-btns{display:flex;gap:.35rem;margin-top:.65rem}
-.add-to-cart-btn,.ask-btn{flex:1;background:transparent;border:1.5px solid var(–border);color:var(–text2);padding:.42rem .3rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.72rem;transition:all .2s}
+.add-to-cart-btn,.ask-btn{flex:1;background:var(–bg2);border:1.5px solid var(–mauve);color:var(–deep);padding:.42rem .3rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.72rem;font-weight:600;transition:all .2s}
 .add-to-cart-btn:hover:not(:disabled){background:var(–deep);color:#fff;border-color:var(–deep);font-weight:600}
 .ask-btn:hover{background:var(–blush);color:var(–deep);border-color:var(–rose)}
 .add-to-cart-btn:disabled{cursor:not-allowed;opacity:.4}
 
 /* PRODUCT MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(61,32,48,.6);backdrop-filter:blur(4px);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}.modal-overlay.open{display:flex}
+.modal-overlay{position:fixed;inset:0;background:rgba(20,10,15,.82);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}.modal-overlay.open{display:flex}
 .modal{background:var(–bg2);border:1.5px solid var(–border);border-radius:20px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
 .modal-close{position:absolute;top:.85rem;right:.85rem;background:var(–blush);border:1.5px solid var(–rose);color:var(–deep);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;z-index:1;transition:all .2s}.modal-close:hover{background:var(–red);color:white;border-color:var(–red)}
 .modal-body{display:flex}.modal-gallery{flex:1;min-width:0}
@@ -112,7 +112,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .hn-text{font-size:.8rem;color:var(–text2);line-height:1.5}
 .var-label{font-size:.7rem;color:var(–text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.42rem;font-weight:600}
 .variations-list{display:flex;flex-wrap:wrap;gap:.38rem}
-.var-btn{border:1.5px solid var(–border);background:var(–bg3);color:var(–text2);padding:.32rem .65rem;border-radius:20px;cursor:pointer;font-size:.76rem;transition:all .2s;font-family:‘DM Sans’,sans-serif}
+.var-btn{border:1.5px solid var(–mauve);background:var(–bg2);color:var(–deep);padding:.32rem .65rem;border-radius:20px;cursor:pointer;font-size:.76rem;transition:all .2s;font-family:‘DM Sans’,sans-serif;font-weight:500}
 .var-btn.active{border-color:var(–deep);color:var(–deep);background:var(–blush)}
 .modal-btns{display:flex;gap:.55rem;margin-top:.4rem}
 .modal-add-btn{flex:2;background:var(–deep);color:#fff;border:none;padding:.75rem;border-radius:25px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.85rem;transition:all .2s}
@@ -120,7 +120,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .modal-ask-btn{flex:1;background:var(–blush);color:var(–deep);border:1.5px solid var(–rose);padding:.75rem;border-radius:25px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.8rem;transition:all .2s}.modal-ask-btn:hover{background:var(–rose)}
 
 /* CART */
-.cart-overlay{position:fixed;inset:0;background:rgba(61,32,48,.5);z-index:3000;display:none}.cart-overlay.open{display:block}
+.cart-overlay{position:fixed;inset:0;background:rgba(20,10,15,.75);z-index:3000;display:none}.cart-overlay.open{display:block}
 .cart-drawer{position:fixed;right:0;top:0;bottom:0;width:370px;max-width:100%;background:var(–bg2);border-left:1.5px solid var(–border);z-index:3001;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}.cart-drawer.open{transform:translateX(0)}
 .cart-header{padding:1.2rem 1.4rem;border-bottom:1px solid var(–border);display:flex;justify-content:space-between;align-items:center}
 .cart-header h3{font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;color:var(–deep)}.cart-close{background:none;border:none;color:var(–text2);cursor:pointer;font-size:1.3rem}
@@ -200,12 +200,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .inbox-empty-icon{font-size:2.2rem}
 
 /* AUTH */
-.auth-overlay{position:fixed;inset:0;background:rgba(61,32,48,.75);backdrop-filter:blur(8px);z-index:6000;display:none;align-items:center;justify-content:center;padding:1rem}.auth-overlay.open{display:flex}
+.auth-overlay{position:fixed;inset:0;background:rgba(20,10,15,.88);backdrop-filter:blur(8px);z-index:6000;display:none;align-items:center;justify-content:center;padding:1rem}.auth-overlay.open{display:flex}
 .auth-box{background:var(–bg2);border:1.5px solid var(–border);border-radius:20px;width:100%;max-width:400px;padding:1.8rem;position:relative}
 .auth-title{font-family:‘Outfit’,sans-serif;font-size:1.9rem;color:var(–deep);margin-bottom:.28rem}
 .auth-sub{font-size:.78rem;color:var(–text3);margin-bottom:1.5rem}
 .auth-tabs{display:flex;margin-bottom:1.3rem;border-bottom:1px solid var(–border)}
-.auth-tab{background:none;border:none;color:var(–text3);padding:.55rem 1.1rem;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.78rem;letter-spacing:.04em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.auth-tab{background:none;border:none;color:var(–text2);padding:.55rem 1.1rem;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
 .auth-tab.active{color:var(–deep);border-bottom-color:var(–deep)}
 .auth-form{display:none}.auth-form.active{display:block}
 .auth-submit{width:100%;background:var(–deep);color:#fff;border:none;padding:.82rem;border-radius:25px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.88rem;transition:background .2s;margin-top:.22rem}.auth-submit:hover{background:var(–mauve)}
@@ -223,7 +223,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .portal-nav-icon,.admin-nav-icon{font-size:.88rem;width:17px;text-align:center}
 .portal-badge,.admin-nav-badge{margin-left:auto;background:var(–deep);color:white;font-size:.6rem;padding:.1rem .35rem;border-radius:10px;font-family:‘DM Sans’,sans-serif;font-weight:700}
 .portal-bottom,.admin-sidebar-bottom{margin-top:auto;padding:1.2rem;border-top:1px solid var(–border)}
-.portal-logout,.admin-logout-btn{width:100%;background:none;border:1.5px solid var(–border);color:var(–text3);padding:.5rem;border-radius:20px;cursor:pointer;font-size:.76rem;transition:all .2s;font-family:‘DM Sans’,sans-serif}.portal-logout:hover,.admin-logout-btn:hover{border-color:var(–red);color:var(–red)}
+.portal-logout,.admin-logout-btn{width:100%;background:var(–redbg);border:1.5px solid var(–red);color:var(–red);padding:.5rem;border-radius:20px;cursor:pointer;font-size:.76rem;transition:all .2s;font-family:‘DM Sans’,sans-serif;font-weight:600}.portal-logout:hover,.admin-logout-btn:hover{background:var(–red);color:#fff}
 .portal-content,.admin-content{flex:1;padding:1.8rem;overflow-y:auto}
 .portal-panel,.admin-panel{display:none}.portal-panel.active,.admin-panel.active{display:block}
 .portal-title,.admin-panel-title{font-family:‘DM Sans’,sans-serif;font-weight:800;font-size:1rem;color:var(–deep);margin-bottom:.18rem}
@@ -241,7 +241,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,246,240
 .table-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.3rem;border-bottom:1px solid var(–border);flex-wrap:wrap;gap:.65rem}
 .table-title{font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.82rem;color:var(–deep)}
 .table-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
-.tbl-search{background:var(–bg3);border:1.5px solid var(–border);color:var(–text);padding:.42rem .65rem;border-radius:20px;font-size:.76rem;font-family:‘DM Sans’,sans-serif;outline:none;width:175px}.tbl-search:focus{border-color:var(–mauve)}
+.tbl-search{background:var(–bg2);border:1.5px solid var(–mauve);color:var(–text);padding:.42rem .65rem;border-radius:20px;font-size:.76rem;font-family:‘DM Sans’,sans-serif;outline:none;width:175px}.tbl-search:focus{border-color:var(–mauve)}
 table{width:100%;border-collapse:collapse;min-width:560px}
 th{padding:.6rem .9rem;text-align:left;font-size:.65rem;font-family:‘DM Sans’,sans-serif;font-weight:700;letter-spacing:.08em;color:var(–text2);text-transform:uppercase;border-bottom:1px solid var(–border);background:var(–blush)}
 td{padding:.8rem .9rem;font-size:.8rem;border-bottom:1px solid var(–border);vertical-align:middle}
@@ -253,17 +253,17 @@ tr:last-child td{border-bottom:none}tr:hover td{background:rgba(249,212,224,.12)
 .status-pill.delivered{background:var(–greenbg);color:var(–green)}.status-pill.cancelled{background:var(–redbg);color:var(–red)}
 .status-pill.available{background:var(–greenbg);color:var(–green)}.status-pill.sold{background:var(–redbg);color:var(–red)}
 .status-pill.active{background:var(–greenbg);color:var(–green)}.status-pill.pending_approval{background:var(–orangebg);color:var(–orange)}.status-pill.suspended{background:var(–redbg);color:var(–red)}
-.tbl-btn{background:none;border:1.5px solid var(–border);color:var(–text2);padding:.25rem .55rem;border-radius:20px;cursor:pointer;font-size:.7rem;transition:all .2s;font-family:‘DM Sans’,sans-serif}
+.tbl-btn{background:var(–bg2);border:1.5px solid var(–mauve);color:var(–deep);padding:.28rem .65rem;border-radius:20px;cursor:pointer;font-size:.72rem;transition:all .2s;font-family:‘DM Sans’,sans-serif;font-weight:600}
 .tbl-btn:hover{border-color:var(–deep);color:var(–deep)}.tbl-btn.danger:hover{border-color:var(–red);color:var(–red)}
 .tbl-btn.primary{background:var(–deep);color:#fff;border-color:var(–deep);font-weight:600}.tbl-btn.primary:hover{background:var(–mauve)}
 .add-listing-btn{background:var(–deep);color:#fff;border:none;padding:.5rem 1rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.78rem;transition:background .2s}.add-listing-btn:hover{background:var(–mauve)}
 
 /* ORDER DRAWER */
-.od-overlay{position:fixed;inset:0;background:rgba(61,32,48,.5);z-index:5000;display:none}.od-overlay.open{display:block}
+.od-overlay{position:fixed;inset:0;background:rgba(20,10,15,.75);z-index:5000;display:none}.od-overlay.open{display:block}
 .od-drawer{position:fixed;right:0;top:0;bottom:0;width:440px;max-width:100%;background:var(–bg2);border-left:1.5px solid var(–border);z-index:5001;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto;padding:1.5rem}.od-drawer.open{transform:translateX(0)}
 .od-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.2rem}
 .od-id{font-family:‘DM Sans’,sans-serif;font-weight:800;font-size:.9rem;color:var(–deep)}.od-date{font-size:.7rem;color:var(–text3);margin-top:.18rem}
-.od-close{background:none;border:1.5px solid var(–border);color:var(–text2);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}.od-close:hover{background:var(–deep);border-color:var(–deep);color:white}
+.od-close{background:var(–blush);border:1.5px solid var(–mauve);color:var(–deep);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}.od-close:hover{background:var(–deep);border-color:var(–deep);color:white}
 .od-section{margin-bottom:1.2rem}
 .od-section-title{font-family:‘DM Sans’,sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.15em;color:var(–mauve);text-transform:uppercase;margin-bottom:.65rem;padding-bottom:.42rem;border-bottom:1px solid var(–border)}
 .od-row{display:flex;justify-content:space-between;padding:.38rem 0;font-size:.8rem}
@@ -273,20 +273,20 @@ tr:last-child td{border-bottom:none}tr:hover td{background:rgba(249,212,224,.12)
 .od-item-img img{width:100%;height:100%;object-fit:cover}
 .od-item-info{flex:1}.od-item-name{font-size:.8rem;font-weight:500;color:var(–text)}.od-item-meta{font-size:.68rem;color:var(–text3)}
 .od-item-price{font-family:‘Outfit’,sans-serif;font-size:1rem;color:var(–deep);white-space:nowrap}
-.status-select{background:var(–bg3);border:1.5px solid var(–border);color:var(–text);padding:.48rem .65rem;border-radius:10px;font-size:.78rem;font-family:‘DM Sans’,sans-serif;outline:none;cursor:pointer;width:100%}.status-select:focus{border-color:var(–mauve)}
+.status-select{background:var(–bg2);border:1.5px solid var(–mauve);color:var(–text);padding:.48rem .65rem;border-radius:10px;font-size:.78rem;font-family:‘DM Sans’,sans-serif;outline:none;cursor:pointer;width:100%}.status-select:focus{border-color:var(–mauve)}
 .upd-btn{background:var(–deep);color:#fff;border:none;padding:.5rem .95rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.76rem;transition:background .2s;margin-top:.6rem;width:100%}.upd-btn:hover{background:var(–mauve)}
 
 /* LISTING FORM MODAL */
-.fm-overlay{position:fixed;inset:0;background:rgba(61,32,48,.75);backdrop-filter:blur(8px);z-index:4000;display:none;align-items:flex-start;justify-content:center;padding:1.5rem 1rem;overflow-y:auto}.fm-overlay.open{display:flex}
+.fm-overlay{position:fixed;inset:0;background:rgba(20,10,15,.88);backdrop-filter:blur(8px);z-index:4000;display:none;align-items:flex-start;justify-content:center;padding:1.5rem 1rem;overflow-y:auto}.fm-overlay.open{display:flex}
 .fm-box{background:var(–bg2);border:1.5px solid var(–border);border-radius:20px;width:100%;max-width:640px;padding:1.6rem;margin:auto}
 .fm-title{font-family:‘Outfit’,sans-serif;font-size:1.6rem;color:var(–deep);margin-bottom:1.2rem}
 .var-list{display:flex;flex-direction:column;gap:.42rem;margin-bottom:.6rem}
 .var-item{display:flex;gap:.42rem;align-items:center}.var-item input{flex:1}
-.var-rm-btn{background:none;border:1.5px solid var(–border);color:var(–text3);width:28px;height:28px;border-radius:8px;cursor:pointer;font-size:.85rem;transition:all .2s;flex-shrink:0}.var-rm-btn:hover{border-color:var(–red);color:var(–red)}
-.add-var-btn{background:none;border:1.5px dashed var(–border);color:var(–text3);padding:.42rem;border-radius:10px;cursor:pointer;font-size:.76rem;width:100%;transition:all .2s;font-family:‘DM Sans’,sans-serif}.add-var-btn:hover{border-color:var(–deep);color:var(–deep)}
+.var-rm-btn{background:var(–redbg);border:1.5px solid var(–red);color:var(–red);width:28px;height:28px;border-radius:8px;cursor:pointer;font-size:.85rem;transition:all .2s;flex-shrink:0;font-weight:700}.var-rm-btn:hover{background:var(–red);color:#fff}
+.add-var-btn{background:var(–blush);border:1.5px dashed var(–mauve);color:var(–deep);padding:.42rem;border-radius:10px;cursor:pointer;font-size:.76rem;width:100%;transition:all .2s;font-family:‘DM Sans’,sans-serif;font-weight:600}.add-var-btn:hover{background:var(–rose)}
 .fm-actions{display:flex;gap:.85rem;margin-top:1.2rem}
 .save-btn{flex:1;background:var(–deep);color:#fff;border:none;padding:.75rem;border-radius:25px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-weight:700;font-size:.85rem;transition:background .2s}.save-btn:hover{background:var(–mauve)}
-.cancel-btn{background:none;border:1.5px solid var(–border);color:var(–text2);padding:.75rem 1.3rem;border-radius:25px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.8rem;transition:all .2s}.cancel-btn:hover{border-color:var(–text2);color:var(–text)}
+.cancel-btn{background:var(–bg2);border:1.5px solid var(–text2);color:var(–text);padding:.75rem 1.3rem;border-radius:25px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.8rem;font-weight:600;transition:all .2s}.cancel-btn:hover{border-color:var(–deep);color:var(–deep)}
 
 /* MEETUP */
 .meetup-card{background:var(–bg2);border:1.5px solid var(–border);border-radius:10px;padding:.85rem;margin-bottom:.58rem;display:flex;align-items:center;justify-content:space-between;gap:.9rem}
@@ -312,7 +312,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
 .footer-bottom{max-width:1200px;margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid var(–rose);text-align:center;color:var(–text2);font-size:.7rem}
 
 /* UTILS */
-.btn-back{background:none;border:1.5px solid var(–border);color:var(–text2);padding:.42rem 1rem;border-radius:20px;cursor:pointer;font-size:.78rem;margin-bottom:1.5rem;transition:all .2s;font-family:‘DM Sans’,sans-serif}.btn-back:hover{border-color:var(–text2);color:var(–text)}
+.btn-back{background:var(–bg2);border:1.5px solid var(–mauve);color:var(–deep);padding:.42rem 1rem;border-radius:20px;cursor:pointer;font-size:.78rem;margin-bottom:1.5rem;transition:all .2s;font-family:‘DM Sans’,sans-serif;font-weight:600}.btn-back:hover{background:var(–blush)}
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(–deep);color:#fff;padding:.6rem 1.3rem;border-radius:20px;font-size:.8rem;z-index:9999;transform:translateY(100px);opacity:0;transition:all .3s}.toast.show{transform:translateY(0);opacity:1}
 .empty-state{text-align:center;padding:3rem 2rem;color:var(–text3)}.empty-state-icon{font-size:2.2rem;margin-bottom:.85rem}
 .divider{height:1px;background:var(–border);margin:1.3rem 0}
@@ -332,7 +332,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
 }
 .mobile-nav{display:none;overflow-x:auto;gap:.4rem;padding:.6rem 0;margin-bottom:1.2rem;border-bottom:1px solid var(–border);scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .mobile-nav::-webkit-scrollbar{display:none}
-.mobile-nav-btn{flex-shrink:0;background:none;border:1.5px solid var(–border);color:var(–text2);padding:.4rem .85rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.78rem;font-weight:500;white-space:nowrap;transition:all .2s}
+.mobile-nav-btn{flex-shrink:0;background:var(–bg2);border:1.5px solid var(–mauve);color:var(–deep);padding:.4rem .85rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.78rem;font-weight:600;white-space:nowrap;transition:all .2s}
 .mobile-nav-btn.active{background:var(–deep);color:#fff;border-color:var(–deep);font-weight:700}
 
 </style></head><body>
@@ -467,7 +467,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
     <h2 class="section-heading">Contact Us</h2>
     <p style="color:var(--text2);font-size:.83rem;margin-bottom:1.5rem;line-height:1.7">Questions about UAE Finds or interested in becoming a seller? Reach out below.</p>
     <div class="contact-channels">
-      <a href="https://wa.me/971000000000" target="_blank" class="channel-btn wa">💬 WhatsApp</a>
+      <a href="https://wa.me/971556260045" target="_blank" class="channel-btn wa">💬 WhatsApp +971 55 626 0045</a>
       <a href="https://m.me/UAEFinds" target="_blank" class="channel-btn fb">💙 Messenger</a>
     </div>
     <div class="form-section-title" style="margin-top:1.8rem">Send a Message</div>
@@ -648,7 +648,7 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
         <div id="pmInfoRows"></div>
         <div class="honest-notes" id="pmFlaws" style="display:none"><div class="hn-label">Seller's Honest Notes</div><div class="hn-text" id="pmFlawsText"></div></div>
         <div id="pmVariations" style="display:none"><div class="var-label">Variations</div><div class="variations-list" id="pmVarList"></div></div>
-        <div id="pmDesc" style="font-size:.78rem;color:var(--text2);line-height:1.6"></div>
+        <div id="pmDesc" style="font-size:.82rem;color:var(--text);line-height:1.6;font-weight:400"></div>
         <div class="modal-btns"><button class="modal-add-btn" id="pmAddBtn" onclick="addFromModal()">Add to Cart</button><button class="modal-ask-btn" onclick="askFromModal()">Ask Seller</button></div>
       </div>
     </div>
@@ -706,7 +706,8 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
     <div class="fm-title" id="listingModalTitle">Add New Listing</div>
     <div class="form-row"><div class="form-group"><label class="form-label">Product Name *</label><input class="form-input" id="lf-name" placeholder="e.g. Zara Floral Dress"></div><div class="form-group"><label class="form-label">Category *</label><select class="form-select" id="lf-cat"><option value="">Select</option><option>Makeup &amp; Beauty</option><option>Clothes &amp; Accessories</option><option>Baby Clothes &amp; Gear</option><option>Mom Stuff</option><option>Home &amp; Furniture</option><option>Appliances &amp; Electronics</option><option>Toys &amp; Kids</option><option>Other / Miscellaneous</option></select></div></div>
     <div class="form-row"><div class="form-group"><label class="form-label">Condition *</label><select class="form-select" id="lf-cond"><option value="">Select</option><option>Brand New</option><option>Like New</option><option>Lightly Used</option><option>Fairly Used</option><option>Heavy Use</option></select></div><div class="form-group"><label class="form-label">Price (AED) *</label><input class="form-input" id="lf-price" type="number" placeholder="0" min="0"></div></div>
-    <div class="form-row"><div class="form-group"><label class="form-label">Size (optional)</label><input class="form-input" id="lf-size" placeholder="e.g. M, 0-3 months"></div><div class="form-group"><label class="form-label">Status</label><select class="form-select" id="lf-status"><option value="available">Available</option><option value="sold">Sold</option></select></div></div>
+    <div class="form-row"><div class="form-group"><label class="form-label">Size (optional)</label><input class="form-input" id="lf-size" placeholder="e.g. M, 0-3 months"></div><div class="form-group"><label class="form-label">Color (optional)</label><input class="form-input" id="lf-color" placeholder="e.g. White, Blue, Red"></div></div>
+    <div class="form-row"><div class="form-group"><label class="form-label">Quantity (optional)</label><input class="form-input" id="lf-qty" type="number" placeholder="1" min="1"></div><div class="form-group"><label class="form-label">Status</label><select class="form-select" id="lf-status"><option value="available">Available</option><option value="sold">Sold</option></select></div></div>
     <div class="form-group"><label class="form-label">Seller's Honest Notes</label><textarea class="form-textarea" id="lf-flaws" placeholder="Any flaws, wear, or important details..."></textarea></div>
     <div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="lf-desc" placeholder="Tell buyers more about this item..."></textarea></div>
     <div class="form-group"><label class="form-label">Variations (optional)</label><div class="var-list" id="lfVarList"></div><button class="add-var-btn" onclick="addLfVar()">+ Add Variation</button></div>
@@ -937,7 +938,7 @@ function renderCards(items){
         <div class="product-name">${p.name}</div><div class="product-cat">${p.category}</div>
         <div class="product-price">AED ${p.price}<small>${p.size?' · '+p.size:''}</small></div>
         <div class="product-card-btns">
-          <button class="add-to-cart-btn" ${p.status==='sold'?'disabled':''} onclick="event.stopPropagation();quickAdd('${p.id}')">${p.status==='sold'?'Sold Out':'+ Cart'}</button>
+          <button class="add-to-cart-btn" ${p.status==='sold'?'disabled':''} onclick="event.stopPropagation();quickAdd('${p.id}')">${p.status==='sold'?'Sold Out':'+ Add to Cart'}</button>
           <button class="ask-btn" onclick="event.stopPropagation();startAsk('${p.id}')">Ask Seller</button>
         </div>
       </div></div>`;
@@ -959,7 +960,7 @@ window.openPM = (id) => {
   const ph=p.photos&&p.photos.length?p.photos.slice(0,10):[];
   if(ph.length){mi.innerHTML=`<img src="${ph[0]}" alt="${p.name}">`;mt.innerHTML=ph.map((u,i)=>`<div class="modal-thumb${i===0?' active':''}" onclick="swImg('${u}',this)"><img src="${u}" alt=""></div>`).join('');}
   else{mi.innerHTML=`<span style="font-size:4rem">${ic}</span>`;mt.innerHTML='';}
-  const rows=[];if(p.condition)rows.push(['Condition',p.condition]);if(p.size)rows.push(['Size',p.size]);
+  const rows=[];if(p.condition)rows.push(['Condition',p.condition]);if(p.size)rows.push(['Size',p.size]);if(p.color)rows.push(['Color',p.color]);if(p.qty&&p.qty>1)rows.push(['Quantity',p.qty+' available']);
   document.getElementById('pmInfoRows').innerHTML=rows.map(r=>`<div class="info-row"><span class="lbl">${r[0]}</span><span class="val">${r[1]}</span></div>`).join('');
   if(p.flaws){document.getElementById('pmFlaws').style.display='block';document.getElementById('pmFlawsText').textContent=p.flaws;}else document.getElementById('pmFlaws').style.display='none';
   if(p.variations&&p.variations.length){document.getElementById('pmVariations').style.display='block';document.getElementById('pmVarList').innerHTML=p.variations.map((v,i)=>`<button class="var-btn${i===0?' active':''}" onclick="selVar('${v}',this)">${v}</button>`).join('');}
@@ -1093,7 +1094,14 @@ window.sendContactMsg=async()=>{
 // ═══════════════════════════════════════════
 window.startAsk=(productId)=>{
   const p=products.find(x=>x.id===productId);if(!p)return;
-  if(!currentUser){showToast('Please log in to message a seller.');openAuth('login');return;}
+  if(!currentUser){
+    // Show WhatsApp option for non-logged-in buyers
+    const seller=sellers.find(s=>s.id===p.sellerId);
+    const phone=seller?.phone?.replace(/[^0-9]/g,'');
+    if(phone){window.open(`https://wa.me/${phone}?text=Hi! I'm interested in your listing: ${encodeURIComponent(p.name)} on UAE Finds`,'_blank');}
+    else showToast('Contact the seller via WhatsApp.');
+    return;
+  }
   if(currentUser.uid===p.sellerId){showToast("That's your own listing!");return;}
   const tId=`th_${currentUser.uid}_${p.sellerId}_${p.id}`;
   let t=threads.find(x=>x.id===tId);
@@ -1318,7 +1326,7 @@ window.saveListing=async()=>{
   if(!name||!cat||!cond||!price){showToast('Please fill required fields.');return;}
   const photos=document.getElementById('lf-photos').value.split('\n').map(s=>s.trim()).filter(Boolean).slice(0,10);
   const variations=lfVars.filter(v=>v.trim());
-  const data={name,category:cat,condition:cond,price,size:document.getElementById('lf-size').value.trim(),status:document.getElementById('lf-status').value,flaws:document.getElementById('lf-flaws').value.trim(),description:document.getElementById('lf-desc').value.trim(),photos,variations,sellerId:currentUser.uid};
+  const data={name,category:cat,condition:cond,price,size:document.getElementById('lf-size').value.trim(),color:document.getElementById('lf-color')?.value.trim()||'',qty:parseInt(document.getElementById('lf-qty')?.value)||1,status:document.getElementById('lf-status').value,flaws:document.getElementById('lf-flaws').value.trim(),description:document.getElementById('lf-desc').value.trim(),photos,variations,sellerId:currentUser.uid};
   if(editLid){
     await fsUpdate('products',editLid,data);
     const p=products.find(x=>x.id===editLid);if(p)Object.assign(p,data);showToast('Listing updated!');
