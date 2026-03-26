@@ -327,13 +327,14 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
 .portal-sidebar,.admin-sidebar{display:none}
 .portal-wrap,.admin-wrap{flex-direction:column}
 .portal-content,.admin-content{padding:1rem}
-.mobile-tabs{display:flex!important}
 .portal-title,.admin-panel-title{font-size:.95rem}
+.mobile-nav{display:flex!important}
 }
-.mobile-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:rgba(254,246,240,.97);border-top:1.5px solid var(–border);padding:.5rem 0;justify-content:space-around;backdrop-filter:blur(10px)}
-.mobile-tab{display:flex;flex-direction:column;align-items:center;gap:.2rem;background:none;border:none;cursor:pointer;padding:.3rem .5rem;color:var(–text3);font-family:‘DM Sans’,sans-serif;font-size:.6rem;min-width:50px;transition:color .2s;position:relative}
-.mobile-tab.active{color:var(–deep)}.mobile-tab-icon{font-size:1.2rem}.mobile-tab-badge{position:absolute;top:0;right:8px;background:var(–deep);color:white;font-size:.55rem;padding:.1rem .3rem;border-radius:10px;font-weight:700}
-.has-mobile-tabs{padding-bottom:65px!important}
+.mobile-nav{display:none;overflow-x:auto;gap:.4rem;padding:.6rem 0;margin-bottom:1.2rem;border-bottom:1px solid var(–border);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.mobile-nav::-webkit-scrollbar{display:none}
+.mobile-nav-btn{flex-shrink:0;background:none;border:1.5px solid var(–border);color:var(–text2);padding:.4rem .85rem;border-radius:20px;cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:.78rem;font-weight:500;white-space:nowrap;transition:all .2s}
+.mobile-nav-btn.active{background:var(–deep);color:#fff;border-color:var(–deep);font-weight:700}
+
 </style></head><body>
 
 <!-- NAV -->
@@ -513,7 +514,15 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
         <div class="portal-bottom"><button class="portal-logout" onclick="sellerLogout()">← Logout</button></div>
       </div>
       <div class="portal-content">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)"><span style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--deep)" id="sellerPortalTitle">Seller Portal</span><button class="btn-back" style="margin:0" onclick="goHome()">← Shop</button></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem"><span style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--deep)" id="sellerPortalTitle">Seller Portal</span><button class="btn-back" style="margin:0" onclick="goHome()">← Shop</button></div>
+        <div class="mobile-nav" id="sellerMobileNav">
+          <button class="mobile-nav-btn active" id="smnav-dashboard" onclick="switchSellerTab('dashboard')">📊 Dashboard</button>
+          <button class="mobile-nav-btn" id="smnav-orders" onclick="switchSellerTab('orders')">📦 Orders</button>
+          <button class="mobile-nav-btn" id="smnav-inventory" onclick="switchSellerTab('inventory')">🏷️ Listings</button>
+          <button class="mobile-nav-btn" id="smnav-inbox" onclick="switchSellerTab('inbox')">✉️ Inbox</button>
+          <button class="mobile-nav-btn" id="smnav-meetups" onclick="switchSellerTab('meetups')">📍 Meetups</button>
+          <button class="mobile-nav-btn" id="smnav-settings" onclick="switchSellerTab('settings')">⚙️ Settings</button>
+        </div>
         <div class="portal-panel active" id="spanel-dashboard">
           <div class="portal-title">Dashboard</div><div class="portal-sub">Your store at a glance</div>
           <div class="stats-grid" id="sellerStats"></div>
@@ -589,7 +598,13 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
         <div class="admin-sidebar-bottom"><button class="admin-logout-btn" onclick="adminLogout()">← Logout</button></div>
       </div>
       <div class="admin-content">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)"><span style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--deep)">UAE Finds Admin</span><button class="btn-back" style="margin:0" onclick="goHome()">← Shop</button></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem"><span style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--deep)">UAE Finds Admin</span><button class="btn-back" style="margin:0" onclick="goHome()">← Shop</button></div>
+        <div class="mobile-nav" id="adminMobileNav">
+          <button class="mobile-nav-btn active" id="amnav-dashboard" onclick="switchAdminTab('dashboard')">📊 Dashboard</button>
+          <button class="mobile-nav-btn" id="amnav-orders" onclick="switchAdminTab('orders')">📦 Orders</button>
+          <button class="mobile-nav-btn" id="amnav-sellers" onclick="switchAdminTab('sellers')">🏪 Sellers</button>
+          <button class="mobile-nav-btn" id="amnav-inbox" onclick="switchAdminTab('inbox')">✉️ Inbox</button>
+        </div>
         <div class="admin-panel active" id="apanel-dashboard">
           <div class="admin-panel-title">Platform Dashboard</div><div class="admin-panel-sub">Overview across all sellers</div>
           <div class="stats-grid" id="adminStats"></div>
@@ -618,26 +633,6 @@ footer{background:var(–blush);border-top:1.5px solid var(–rose);padding:2.2r
       </div>
     </div>
   </div>
-</div>
-
-<!-- ADMIN MOBILE TABS -->
-
-<div class="mobile-tabs" id="adminMobileTabs" style="display:none">
-  <button class="mobile-tab active" id="amtab-dashboard" onclick="switchAdminTab('dashboard');setAMTab('dashboard')"><span class="mobile-tab-icon">📊</span>Dashboard</button>
-  <button class="mobile-tab" id="amtab-orders" onclick="switchAdminTab('orders');setAMTab('orders')"><span class="mobile-tab-icon">📦</span>Orders<span class="mobile-tab-badge" id="adminPendingBadge2" style="display:none">0</span></button>
-  <button class="mobile-tab" id="amtab-sellers" onclick="switchAdminTab('sellers');setAMTab('sellers')"><span class="mobile-tab-icon">🏪</span>Sellers<span class="mobile-tab-badge" id="adminSellerBadge2" style="display:none">0</span></button>
-  <button class="mobile-tab" id="amtab-inbox" onclick="switchAdminTab('inbox');setAMTab('inbox')"><span class="mobile-tab-icon">✉️</span>Inbox<span class="mobile-tab-badge" id="adminInboxBadge2" style="display:none">0</span></button>
-  <button class="mobile-tab" onclick="adminLogout();document.getElementById('adminMobileTabs').style.display='none'"><span class="mobile-tab-icon">🚪</span>Exit</button>
-</div>
-
-<!-- SELLER MOBILE TABS -->
-
-<div class="mobile-tabs" id="sellerMobileTabs" style="display:none">
-  <button class="mobile-tab active" id="smtab-dashboard" onclick="switchSellerTab('dashboard');setSMTab('dashboard')"><span class="mobile-tab-icon">📊</span>Dashboard</button>
-  <button class="mobile-tab" id="smtab-orders" onclick="switchSellerTab('orders');setSMTab('orders')"><span class="mobile-tab-icon">📦</span>Orders<span class="mobile-tab-badge" id="sellerPendingBadge2" style="display:none">0</span></button>
-  <button class="mobile-tab" id="smtab-inventory" onclick="switchSellerTab('inventory');setSMTab('inventory')"><span class="mobile-tab-icon">🏷️</span>Listings</button>
-  <button class="mobile-tab" id="smtab-inbox" onclick="switchSellerTab('inbox');setSMTab('inbox')"><span class="mobile-tab-icon">✉️</span>Inbox<span class="mobile-tab-badge" id="sellerInboxBadge2" style="display:none">0</span></button>
-  <button class="mobile-tab" id="smtab-settings" onclick="switchSellerTab('settings');setSMTab('settings')"><span class="mobile-tab-icon">⚙️</span>More</button>
 </div>
 
 <!-- PRODUCT MODAL -->
@@ -835,12 +830,6 @@ window.showPage = function(p) {
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
   window.scrollTo(0,0);
-  // Hide both tab bars when going to non-portal pages
-  if(p!=='admin'){document.getElementById('adminMobileTabs').style.display='none';}
-  if(p!=='seller'){document.getElementById('sellerMobileTabs').style.display='none';}
-  // Re-show if going to portal
-  if(p==='admin'&&adminIn)document.getElementById('adminMobileTabs').style.display='flex';
-  if(p==='seller'&&currentUser)document.getElementById('sellerMobileTabs').style.display='flex';
   if(p==='home')renderHome();
   if(p==='shop')renderShop();
   if(p==='checkout')renderCheckout();
@@ -1195,7 +1184,6 @@ window.sellerLogout=async()=>{
   await signOut(auth);currentUser=null;updateNavUser();
   document.getElementById('sellerGate').style.display='block';
   document.getElementById('sellerDash').style.display='none';
-  document.getElementById('sellerMobileTabs').style.display='none';
   showPage('home');
 };
 
@@ -1203,10 +1191,8 @@ window.sellerLogout=async()=>{
 // SELLER PORTAL
 // ═══════════════════════════════════════════
 function renderSellerPortal(){
-  if(!currentUser){document.getElementById('sellerGate').style.display='block';document.getElementById('sellerDash').style.display='none';document.getElementById('sellerMobileTabs').style.display='none';return;}
+  if(!currentUser){document.getElementById('sellerGate').style.display='block';document.getElementById('sellerDash').style.display='none';return;}
   document.getElementById('sellerGate').style.display='none';document.getElementById('sellerDash').style.display='block';
-  document.getElementById('sellerMobileTabs').style.display='flex';
-  document.getElementById('adminMobileTabs').style.display='none';
   document.getElementById('sellerNameTag').textContent=currentUser.storeName;
   switchSellerTab(curSellerTab);
 }
@@ -1219,7 +1205,7 @@ window.switchSellerTab=(t)=>{
   if(t==='dashboard')renderSellerDash();if(t==='orders')renderSellerOrders();
   if(t==='inventory')renderSellerInventory();if(t==='inbox')renderSellerInboxList();
   if(t==='meetups')renderSellerMeetups();if(t==='settings')loadSellerSettings();
-  setSMTab(t);
+
 };
 
 function renderSellerDash(){
@@ -1390,12 +1376,10 @@ window.checkAdmin=()=>{
     adminIn=true;
     document.getElementById('adminGate').style.display='none';
     document.getElementById('adminDash').style.display='block';
-    document.getElementById('adminMobileTabs').style.display='flex';
-    document.getElementById('sellerMobileTabs').style.display='none';
     switchAdminTab('dashboard');
   }else showToast('Incorrect password.');
 };
-window.adminLogout=()=>{adminIn=false;document.getElementById('adminGate').style.display='block';document.getElementById('adminDash').style.display='none';document.getElementById('adminMobileTabs').style.display='none';};
+window.adminLogout=()=>{adminIn=false;document.getElementById('adminGate').style.display='block';document.getElementById('adminDash').style.display='none';};
 
 window.switchAdminTab=(t)=>{
   curAdminTab=t;
@@ -1404,7 +1388,7 @@ window.switchAdminTab=(t)=>{
   const navEl=document.getElementById('atab-'+t);if(navEl)navEl.classList.add('active');
   const panelEl=document.getElementById('apanel-'+t);if(panelEl)panelEl.classList.add('active');
   if(t==='dashboard')renderAdminDash();if(t==='orders')renderAdminOrders();if(t==='sellers')renderAdminSellers();if(t==='inbox')renderAdminInbox();
-  setAMTab(t);
+
 };
 
 function renderAdminDash(){
@@ -1489,29 +1473,6 @@ window.showToast=(msg)=>{const t=document.getElementById('toast');t.textContent=
 // START
 // ═══════════════════════════════════════════
 init();
-
-// Mobile tab helpers
-window.setAMTab = (t) => {
-  document.querySelectorAll('#adminMobileTabs .mobile-tab').forEach(x=>x.classList.remove('active'));
-  const el=document.getElementById('amtab-'+t);if(el)el.classList.add('active');
-};
-window.setSMTab = (t) => {
-  document.querySelectorAll('#sellerMobileTabs .mobile-tab').forEach(x=>x.classList.remove('active'));
-  const el=document.getElementById('smtab-'+t);if(el)el.classList.add('active');
-};
-
-// Show/hide mobile tabs based on current page
-function updateMobileTabs(page) {
-  const at=document.getElementById('adminMobileTabs');
-  const st=document.getElementById('sellerMobileTabs');
-  const ac=document.getElementById('adminDash');
-  const sc=document.getElementById('sellerDash');
-  if(at)at.style.display=(page==='admin'&&adminIn)?'flex':'none';
-  if(st)st.style.display=(page==='seller'&&currentUser)?'flex':'none';
-  // Add bottom padding when tabs visible
-  const ap=document.getElementById('apanel-'+curAdminTab);
-  const sp=document.getElementById('spanel-'+curSellerTab);
-}
 
 // Hash routing
 
